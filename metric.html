@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social Mobile Manipulation Challenge - Competition Tracks</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2a3f54;
+            color: #fff;
+            padding: 20px 10%;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        main {
+            padding: 40px 10%;
+        }
+
+        section {
+            background: #fff;
+            margin-bottom: 30px;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            border-bottom: 2px solid #2a3f54;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #2a3f54;
+        }
+
+        .track-description {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2a3f54;
+            color: #fff;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 20px;
+            padding: 20px 10%;
+        }
+
+        .overview {
+            margin-bottom: 30px;
+        }
+
+        /* 针对组织者区块的标题和分隔线 */
+        .organizers h2 {
+            color: #2a3f54;
+            margin-bottom: 10px;
+        }
+
+        .organizers hr {
+            border: 0;
+            border-top: 2px solid #2a3f54;
+            margin-bottom: 20px;
+        }
+
+        /* 使用 Grid 布局显示每行四个组织者 */
+        .organizers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+
+        .organizers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .organizer {
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* 可选：保证图片样式一致 */
+        .organizer img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+            /* 添加悬停动画 */
+        }
+
+        .organizer img:hover {
+            transform: scale(1.05);
+        }
+
+        .organizer p:first-of-type a {
+            font-family: 'Times New Roman', Arial;
+            /* 更美观字体 */
+            font-size: 20px;
+            font-weight: 700;
+            color: #2a3f54;
+            /* 品牌主色 */
+            text-decoration: none;
+            /* 去除下划线 */
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+        }
+
+        .organizer p:first-of-type a:hover {
+            color: #1d2b38;
+            /* 加深颜色 */
+            transform: translateY(-2px);
+
+            /* 添加自定义下划线效果 */
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background: #ff6b6b;
+                /* 强调色 */
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+
+        .organizer p:last-child {
+            font-size: 20px;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+
+        /* 当屏幕宽度小于 800px 时，采用自适应布局 */
+        @media (max-width: 800px) {
+            .organizers-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Social Mobile Manipulation Challenge</h1>
+        <p>CVPR2025 Embodied AI Workshop Challenge</p>
+    </header>
+    <main>
+        <!-- Overall Overview -->
+        <section class="overview">
+            <h2>Overview</h2>
+            <p>
+            <p>The 1st Social Mobile Manipulation Challenge—organized based on the insights presented in the
+                <strong> <a href="https://github.com/pzhren/InfiniteWorld" target="_blank">InfiniteWorld</a></strong>
+                —focuses on
+                developing embodied AI agents capable of performing long sequences of complex
+                tasks through social interactions.
+            </p>
+
+            <h3>
+                Competition Description
+            </h3>
+            The challenge includes two interaction modes: <strong>human-robot</strong> and
+            <strong>robot-robot</strong>. The goal
+            is to advance
+            the community's capabilities in areas like human intention reasoning, long-term task planning, and
+            effective social interaction between embodied agents.
+            </p>
+        </section>
+
+
+
+        <!-- Track 1: Vertical Interaction -->
+        <section id="vertical-track">
+            <h2>Track 1: Vertical Interaction</h2>
+            <div class="track-description">
+                <p>This track focuses on vision-language navigation. The participating agent receives a partial scene
+                    graph as a prompt to perform tasks such as "pick up an object from one place and place it at
+                    another." The task descriptions are simple yet ambiguous, challenging the agent's understanding of
+                    both the instructions and the scene.</p>
+            </div>
+            <h3>Task and Data Format</h3>
+            <ul>
+                <li>Task instruction: e.g., "Please take the wreath from the living room and place it on the kitchen
+                    island."</li>
+                <li>Task decomposition: includes sub-tasks like moving to the target location, grasping, moving, and
+                    releasing.</li>
+                <li>Provided information: scene ID, target details, target-centered scene graph, and the optimal
+                    navigation path.</li>
+            </ul>
+            <h3>Model Input and Output</h3>
+            <ul>
+                <li><strong>Model Input:</strong> Task instruction, RGB-D observations from three viewpoints (-90°, 0°,
+                    +90°), and the current pose.</li>
+                <li><strong>Model Output:</strong> Atomic actions with corresponding numerical values, including
+                    “MoveForward”, “TurnLeft”, “TurnRight”, and “Stop”.</li>
+            </ul>
+            <h3>Actions and Parameters</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Description</th>
+                        <th>Action Value (Range)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MoveForward</td>
+                        <td>Move forward by a specified distance</td>
+                        <td>0 m ~ 1.50 m</td>
+                    </tr>
+                    <tr>
+                        <td>TurnLeft</td>
+                        <td>Rotate left by a specified angle</td>
+                        <td>0° ~ 90°</td>
+                    </tr>
+                    <tr>
+                        <td>TurnRight</td>
+                        <td>Rotate right by a specified angle</td>
+                        <td>0° ~ 90°</td>
+                    </tr>
+                    <tr>
+                        <td>Stop</td>
+                        <td>Stop current navigation target</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Evaluation Metrics</h3>
+            <ul>
+                <li>SR (Success Rate): Task completion rate</li>
+                <li>SPL (Success weighted by Path Length): Task completion efficiency</li>
+                <li>CR (Collision Rate): Collision rate</li>
+                <li>Avg Steps (Average Steps): Average number of steps</li>
+            </ul>
+            <h3>Challenges</h3>
+            <ul>
+                <li>Complex tasks: The agent must locate multiple targets simultaneously.</li>
+                <li>Ambiguous instructions: Simple task descriptions require strong comprehension.</li>
+                <li>The design of high-level prompts is crucial for task success.</li>
+            </ul>
+        </section>
+
+        <!-- Track 2: Horizontal Interaction -->
+        <section id="horizontal-track">
+            <h2>Track 2: Horizontal Interaction</h2>
+            <div class="track-description">
+                <p>This track focuses on a multi-robot cooperative scenario. Two robots operate independently in the
+                    same scene but periodically share their observed scene maps to improve task efficiency. The robots
+                    use the Stretch-3 model and perform actions via atomic commands.</p>
+            </div>
+            <h3>Robot and Actions</h3>
+            <ul>
+                <li><strong>Robot Model:</strong> Stretch-3 (<a href="https://hello-robot.com/stretch-3-product"
+                        target="_blank">Product Details</a>).</li>
+                <li><strong>Atomic Actions:</strong> Move forward, turn left, and turn right. Each action requires
+                    specifying an action value (e.g., distance or angle) within predefined limits.</li>
+            </ul>
+            <h3>Observations and Task Instructions</h3>
+            <ul>
+                <li>Each robot receives a task instruction, RGB-D observations from three viewpoints, and its current
+                    position state.</li>
+            </ul>
+            <h3>Scene Graph Sharing</h3>
+            <p>After a certain number of steps, the two robots exchange their respective scene graphs (node graphs) to
+                complete tasks more quickly. For example, a node table might include:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Node ID</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Connected Nodes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>N1</td>
+                        <td>Room</td>
+                        <td>Starting area</td>
+                        <td>N2, N3</td>
+                    </tr>
+                    <tr>
+                        <td>N2</td>
+                        <td>Hallway</td>
+                        <td>Corridor to other areas</td>
+                        <td>N1, N4</td>
+                    </tr>
+                    <tr>
+                        <td>N3</td>
+                        <td>Object</td>
+                        <td>Detected table</td>
+                        <td>N1</td>
+                    </tr>
+                    <tr>
+                        <td>N4</td>
+                        <td>Door</td>
+                        <td>Exit leading to another room</td>
+                        <td>N2, N5</td>
+                    </tr>
+                    <tr>
+                        <td>N5</td>
+                        <td>Room</td>
+                        <td>Adjacent room</td>
+                        <td>N4</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Evaluation Metrics</h3>
+            <ul>
+                <li>SR (Success Rate): Task completion rate</li>
+                <li>SPL (Success weighted by Path Length): Task completion efficiency</li>
+                <li>CR (Collision Rate): Collision rate</li>
+                <li>Avg Steps (Average Steps): Average number of steps</li>
+            </ul>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Social Mobile Manipulation Challenge. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
