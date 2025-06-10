@@ -280,7 +280,7 @@
 				<!-- <iframe style='width: 600px;height: 338px;' frameborder='no' allowfullscreen mozallowfullscreen
 					webkitallowfullscreen
 					src='http://go.plvideo.cn/front/video/preview?vid=t1c133894e5a67a12c7d237320cab33f_t'></iframe> -->
-				<script src='//player.polyv.net/resp/vod-player/latest/player.js'></script>
+				<!-- <script src='//player.polyv.net/resp/vod-player/latest/player.js'></script>
 				<div id='plv_t1c133894e5a67a12c7d237320cab33f_t'></div>
 				<script>
 					var player = polyvPlayer({
@@ -290,7 +290,19 @@
 						'vid': 't1c133894e5a67a12c7d237320cab33f_t',
 						'playsafe': '' // 播放加密视频的凭证, 取值参考文档: https://help.polyv.net/index.html#/vod/api/playsafe/token/create_token 
 					});
+				</script> -->
+				<script src='//player.polyv.net/resp/vod-player/latest/player.js'></script>
+				<div id='plv_me5dc45d4583a63ec81c8461b67d1cfc_m'></div>
+				<script>
+				var player = polyvPlayer({
+				  'wrap':'#plv_me5dc45d4583a63ec81c8461b67d1cfc_m',
+				  'width':'600',
+				  'height':'338',
+				  'vid': 'me5dc45d4583a63ec81c8461b67d1cfc_m',
+				  'playsafe': '' // 播放加密视频的凭证, 取值参考文档: https://help.polyv.net/index.html#/vod/api/playsafe/token/create_token 
+				});
 				</script>
+
 			</div>
 			<p style="text-align:center">
 				Vedio1: Two Go2 collaborate to grab a bottle of beverage and interact with humans during the process<br>
